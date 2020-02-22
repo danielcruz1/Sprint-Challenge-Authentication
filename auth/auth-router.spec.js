@@ -9,6 +9,7 @@ describe('root', () => {
 });
 
 describe('GET /', () => {
+    
   it('should return 200 ok', async () => {
     const res = await request(server)
     .get('/');
@@ -17,12 +18,16 @@ describe('GET /', () => {
   });
 
   it('should be json', async () => {
-    const res = await request(server).get('/');
+    const res = await request(server)
+    .get('/');
+
     expect(res.type).toBe('application/json');
   }),
 
   it('should return the right object', async () => {
-    const res = await request(server).get('/');
+    const res = await request(server)
+    .get('/');
+
     expect(res.body).toEqual({ message: 'Welcome to your final Sprint Challenge this side of LABS!!!' });
   });
 });
